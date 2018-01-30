@@ -1,6 +1,6 @@
 import { connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
-import userPage from "../pages/userPage";
+import AddOffer from "../pages/userPage";
 
 
 
@@ -12,4 +12,4 @@ const mapDispatchToProps = (dispatch) => {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(userPage);
+export default connect(mapStateToProps, mapDispatchToProps)(AddOffer);

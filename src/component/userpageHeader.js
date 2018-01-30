@@ -13,11 +13,15 @@ export default class UserHeader extends Component {
         <div className="col-lg-2 side_bar_col">
 
             <ul className="sidebar_ul">
-                <li className="selectedrpagTab_usee"><Link to="/addrestaurant" className="underline_Remove"> Add Restaurant </Link></li>
-                <li> <Link to="/" className="underline_Remove">Edit Restaurant </Link></li>
-                <li> <Link to="/" className="underline_Remove">Add Menu </Link></li>
-                <li> <Link to="/" className="underline_Remove">Add Offers </Link></li>
-                <li> <Link to="/" className="underline_Remove">dsdsdssd </Link></li>
+                <li className="selectedrpagTab_usee"><Link to="/addrestaurant" className="underline_Remove" onClick={()=>{
+                    this.props.changePage();
+                }}> Add Restaurant </Link></li>
+                <li> <Link to="/editrestaurant" className="underline_Remove" onClick={()=>{
+                    this.props.changePage();
+                }}>Edit Restaurant </Link></li>
+                <li> <Link to="/addmenu" className="underline_Remove">Add Menu </Link></li>
+                <li> <Link to="/addoffer" className="underline_Remove">Add Offers </Link></li>
+             
             </ul>
 
         </div>

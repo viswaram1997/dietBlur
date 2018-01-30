@@ -27,7 +27,7 @@ export default class AddRestaurant extends Component {
             city: "",
             state: "",
             contact: "",
-            address: "",
+            address: ""
             
         }
     }
@@ -37,12 +37,14 @@ export default class AddRestaurant extends Component {
       this.props.getRestaurant("viswa");
     this.setState({
         editpage:true
+      
     })
 
   }
     }
     componentWillReceiveProps(props){
-        if(this.state.editpage){
+        var pathArray = window.location.pathname.split( '/' );
+        if(pathArray[1]==="editrestaurant"){
             var { restaurantInfo,restaurantName,address,area,city,contact,state,username} = props.restaurantDetails.response;
             this.setState({
                 restaurantName:restaurantName,
@@ -53,9 +55,9 @@ export default class AddRestaurant extends Component {
                 contact:contact,
                 address:address,
                 username:username                
-            } ) 
-        }
-        console.log(props);
+            } ) }
+  
+ 
 
     }
     handleInput({ target }) {
@@ -65,11 +67,7 @@ export default class AddRestaurant extends Component {
         })
 
     }
-    changePage() {
-        this.setState({
-            editpage: !this.state.editpage
-        })
-    }
+    
     ModalToggle() {
         this.setState({
             modalStatus: !this.state.modalStatus
@@ -104,6 +102,11 @@ var username="viswa"
    }
        
     }
+    changePage(data){  
+        this.setState({
+            editpage:!this.state.editpage
+        })
+    }
     render() {
         var category = [
             {
@@ -131,14 +134,14 @@ var username="viswa"
 
                 <Headers />
                 <div className="row">
-                    <UserHeader />
+                    <UserHeader changePage={this.changePage.bind(this)} />
 
                     <div className="col-md-10 col-lg-10">
                         <div style={{ textAlign: "center", paddingTop: "30px" }}>
                             <p className="form_heading_admin">
                                 <img src={icon} srcset="https://image.flaticon.com/icons/png/512/264/264085.png 4x" alt="Dinner" title="Dinner" width="64" height="64" />
                                 <h2 style={{ paddingLeft: "20px" }}>
-                                    Add Restaurant
+                                  {this.state.editpage ? 'Edit Restaurant ' : 'Add Reastaurant'}
                               </h2>
                             </p>
                         </div>

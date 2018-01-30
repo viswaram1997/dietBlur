@@ -9,7 +9,7 @@ import Label from 'semantic-ui-react/dist/commonjs/elements/Label/Label';
 import AddCombo from "../../component/addcombo";
 import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid/Grid';
 import UserHeader from "../../component/userpageHeader";
-export default class UserPage extends Component {
+export default class AddOffer extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -17,11 +17,7 @@ export default class UserPage extends Component {
             modalStatus: false
         }
     }
-    changePage() {
-        this.setState({
-            editpage: !this.state.editpage
-        })
-    }
+ 
     ModalToggle() {
         this.setState({
             modalStatus: !this.state.modalStatus
@@ -167,7 +163,7 @@ export default class UserPage extends Component {
                         </div>
                            
                         <div className="add_offers cursor_pointer">
-                            <h2  style={{paddingRight:"50px"}}onClick={this.ModalToggle.bind(this)}><Icon name="add" /> Add Offers</h2>
+                            <h2  style={{paddingRight:"50px",paddingTop:"137%"}}onClick={this.ModalToggle.bind(this)}><Icon name="add" /> Add Offers</h2>
                                        <Modal open={this.state.modalStatus} size="large" >
                             <Modal.Header>Add Offers</Modal.Header>
                             <Modal.Content scrolling className="modal_content">

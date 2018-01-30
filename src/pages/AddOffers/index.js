@@ -9,7 +9,7 @@ import AddCombo from "../../component/addcombo";
 import Grid from 'semantic-ui-react/dist/commonjs/collections/Grid/Grid';
 import { Link } from 'react-router-dom';
 import UserHeader from "../../component/userpageHeader";
-export default class AddOffers extends Component {
+export default class AddMenu extends Component {
     constructor(props) {
         super(props);
         this.state = {
