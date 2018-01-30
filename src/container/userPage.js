@@ -1,0 +1,15 @@
+import { connect} from 'react-redux';
+import { bindActionCreators } from 'redux';
+import userPage from "../pages/userPage";
+
+
+
+const mapStateToProps = (state) => {
+    
+}
+
+const mapDispatchToProps = (dispatch) => {
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(userPage);
